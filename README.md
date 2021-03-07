@@ -2,6 +2,9 @@
 
 ## Sample Code
 
+## Pandas Get Data From SET
+Get Data From https://www.set.or.th and insert to Odoo
+
 ### Scheduled Get Data
 ![alt](https://github.com/Sin1apachai/AnalysisDataSETbyOdoo/blob/main/image/odoo_sc.png?raw=true)
 
