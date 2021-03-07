@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+        <record id="view_ptt_data_graph" model="ir.ui.view">
+            <field name="name">ptt.data.graph</field>
+            <field name="model">data.ptt</field>
+            <field name="arch" type="xml">
+                <graph string="PTT Line" >
+                    <field name="dd" type="row"/>
+                    <field name="po" type="measure"/>
+                    <field name="pc" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="view_ptt_data_tree" model="ir.ui.view">
+            <field name="name">ptt.data.tree</field>
+            <field name="model">data.ptt</field>
+            <field name="arch" type="xml">
+                <tree string="PTT Data Tree">
+                    <field name="dd"/>
+                    <field name="po"/>
+                    <field name="ph"/>
+                    <field name="pl"/>
+                    <field name="pc"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="data_form_view">
+            <field name="name">ptt.data.form</field>
+            <field name="model">data.ptt</field>
+            <field name="arch" type="xml">
+                <form string="PTT Data Form">
+                    <sheet>
+                        <group>
+                            <field name="dd"/>
+                            <field name="po"/>
+                            <field name="ph"/>
+                            <field name="pl"/>
+                            <field name="pc"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="data_list_action" model="ir.actions.act_window">
+            <field name="name">PTT Data</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">data.ptt</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem id="main_master_data_menu" name="Master Data"/>
+        <!-- <menuitem id="data_menu" name="Data"
+                  parent="main_data_menu"/> -->
+        <menuitem id="data_menu" name="PTT Data" parent="main_master_data_menu"
+                  action="data_list_action"/>
+
+</odoo>
